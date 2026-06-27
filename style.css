@@ -163,8 +163,11 @@ header p {
 /* Grid Reka Bentuk Kad Artikels */
 .exhibit-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    /* Menggunakan auto-fill membenarkan justify-content berfungsi untuk posisi tengah */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.4rem;
+    /* Memastikan kad yang turun ke baris bawah akan duduk di tengah */
+    justify-content: center; 
 }
 
 .exhibit-card {
