@@ -1,0 +1,381 @@
+/* ==========================================
+   GAYA CSS (STYLE) - TEMA EMAS & NAVY LUXURY
+   ========================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --navy: #0a1628;
+    --deep: #0d2144;
+    --gold: #c8973a;
+    --gold-lt: #f0c060;
+    --red: #c0392b;
+    --green: #1a7a4a;
+    --white: #fff;
+    --off: #f8f4ee;
+    --glass: rgba(255, 255, 255, 0.07);
+    --gb: rgba(200, 151, 58, 0.25);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--navy);
+    color: #e8e0d0;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+header {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 4rem 1rem 3rem;
+    background: linear-gradient(180deg, rgba(10, 22, 40, .95) 0%, rgba(13, 33, 68, .6) 100%);
+    border-bottom: 1px solid var(--gb);
+}
+
+.badge {
+    display: inline-block;
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: .3rem 1.2rem;
+    border-radius: 30px;
+    margin-bottom: 1.2rem;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 5vw, 3.2rem);
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: .7rem;
+    text-shadow: 0 0 40px rgba(200, 151, 58, .3);
+}
+
+header h1 span {
+    color: var(--gold-lt);
+}
+
+header p {
+    font-size: .95rem;
+    color: rgba(232, 224, 208, .7);
+    font-style: italic;
+}
+
+.container {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.2rem 4rem;
+}
+
+/* Menu E-Majalah Tab Nav */
+.nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    padding: .8rem;
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--gb);
+    border-radius: 16px;
+}
+
+.nav-btn {
+    background: transparent;
+    border: 1px solid rgba(200, 151, 58, .2);
+    color: rgba(232, 224, 208, .8);
+    padding: .6rem 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: .85rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    transition: all .25s;
+    white-space: nowrap;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
+    font-weight: 600;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(200, 151, 58, .35);
+}
+
+.content-section {
+    display: none;
+    animation: fadeSlide .45s ease;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--gold);
+    padding-left: 1rem;
+}
+
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--gold-lt);
+    margin-bottom: .3rem;
+}
+
+.section-header p {
+    font-size: .9rem;
+    color: rgba(232, 224, 208, .6);
+}
+
+/* Grid Reka Bentuk Kad Artikels */
+.exhibit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.exhibit-card {
+    background: var(--glass);
+    border: 1px solid var(--gb);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+}
+
+.exhibit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, .4), 0 0 0 1px var(--gold);
+}
+
+.exhibit-ph {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, var(--deep), #1a3a60);
+    border-bottom: 1px solid var(--gb);
+}
+
+.exhibit-body {
+    padding: 1.3rem;
+    flex-grow: 1;
+}
+
+.exhibit-body .tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--gold-lt);
+    border: 1px solid rgba(240,192,96,0.3);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.6rem;
+}
+
+.exhibit-body h4 {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #fff;
+    margin-bottom: .5rem;
+}
+
+.exhibit-body p {
+    font-size: .875rem;
+    color: rgba(232, 224, 208, .75);
+    line-height: 1.6;
+}
+
+/* Kotak Nilai & Nota */
+.harmony-note {
+    background: rgba(26, 122, 74, .15);
+    border-left: 4px solid var(--green);
+    padding: 1.2rem;
+    border-radius: 0 10px 10px 0;
+    margin-top: 2rem;
+    font-size: .9rem;
+    color: rgba(232, 224, 208, .9);
+    line-height: 1.6;
+}
+
+.value-box {
+    background: linear-gradient(135deg, rgba(20,40,80,0.6), rgba(10,22,40,0.8));
+    border: 1px solid var(--gb);
+    border-radius: 14px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.value-box h4 {
+    color: var(--gold-lt);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Alat Muzik */
+.instrument-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+}
+
+.instrument-card {
+    background: var(--glass);
+    border: 1px solid var(--gb);
+    border-radius: 14px;
+    padding: 1.8rem 1rem 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all .25s;
+}
+
+.instrument-card:hover {
+    background: rgba(200, 151, 58, .1);
+    border-color: var(--gold);
+}
+
+.instrument-card.playing {
+    background: rgba(200, 151, 58, .2);
+    border-color: var(--gold-lt);
+    animation: pulseGlow 1.2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 10px rgba(200, 151, 58, .2); }
+    50% { box-shadow: 0 0 25px rgba(200, 151, 58, .5); }
+}
+
+.inst-icon {
+    font-size: 2.8rem;
+    margin-bottom: .6rem;
+}
+
+.inst-name {
+    font-weight: 600;
+    color: var(--gold-lt);
+    font-size: 1rem;
+}
+
+.inst-sub {
+    font-size: .78rem;
+    color: rgba(232, 224, 208, .5);
+    margin-top: .2rem;
+}
+
+/* Blok Kuiz Trivia Interaktif */
+.quiz-block {
+    background: var(--glass);
+    border: 1px solid var(--gb);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(8px);
+}
+
+.quiz-q {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--off);
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+}
+
+.quiz-opts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .7rem;
+}
+
+.quiz-opt {
+    padding: .85rem 1rem;
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid rgba(200, 151, 58, .2);
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-size: .88rem;
+    color: rgba(232, 224, 208, .85);
+    transition: all .2s;
+}
+
+.quiz-opt:hover:not(:disabled) {
+    background: rgba(200, 151, 58, .15);
+    border-color: var(--gold);
+    color: #fff;
+}
+
+.quiz-opt.correct {
+    background: rgba(26, 122, 74, .3);
+    border-color: var(--green);
+    color: #7fdbaa;
+    font-weight: 600;
+}
+
+.quiz-opt.wrong {
+    background: rgba(192, 57, 43, .2);
+    border-color: var(--red);
+    color: #f08080;
+}
+
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gb), transparent);
+    margin: 0;
+    position: relative;
+    z-index: 10;
+}
+
+footer {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 2.5rem;
+    font-size: .85rem;
+    color: rgba(232, 224, 208, .35);
+    border-top: 1px solid var(--gb);
+}
+
+@media(max-width: 768px) {
+    .exhibit-grid { grid-template-columns: 1fr; }
+    .quiz-opts { grid-template-columns: 1fr; }
+    .instrument-grid { grid-template-columns: 1fr 1fr; }
+}

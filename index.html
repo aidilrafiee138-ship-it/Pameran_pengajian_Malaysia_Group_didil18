@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Majalah Citra Malaysia: Suara &amp; Harmoni Perpaduan</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<header>
+  <div class="badge">E-Majalah Interaktif Pengajian Malaysia</div>
+  <h1>Citra <span>Malaysia</span><br>Sinfoni Warna &amp; Budaya</h1>
+  <p>Edisi Jalinan Harmoni, Adat Kenergerian, dan Nilai Integriti Keamanan Negara</p>
+</header>
+
+<div class="container">
+  
+  <nav class="nav-menu">
+    <button class="nav-btn active" id="btn-budaya" onclick="showSection('budaya')">🏛️ 1. Budaya Kenergerian</button>
+    <button class="nav-btn" id="btn-perayaan" onclick="showSection('perayaan')">🏮 2. Erti Perayaan</button>
+    <button class="nav-btn" id="btn-makanan" onclick="showSection('makanan')">🍲 3. Makanan Tradisi</button>
+    <button class="nav-btn" id="btn-muzik" onclick="showSection('muzik')">🥁 4. Alat Muzik</button>
+    <button class="nav-btn" id="btn-nilai" onclick="showSection('nilai')">🤝 5. Nilai Keamanan</button>
+    <button class="nav-btn" id="btn-trivia" onclick="showSection('trivia')">🎮 6. Kuiz Interaktif</button>
+  </nav>
+
+  <div id="budaya" class="content-section active">
+    <div class="section-header">
+      <h2>🏛️ Artikel 1: Keunikan Adat &amp; Budaya Kenergerian</h2>
+      <p>Menelusuri keistimewaan identiti tradisi setiap negeri serta komuniti etnik borneo</p>
+    </div>
+    <div class="exhibit-grid">
+      <div class="exhibit-card">
+        <div class="exhibit-ph">💃</div>
+        <div class="exhibit-body">
+          <span class="tag">Pantai Timur (Kelantan &amp; Terengganu)</span>
+          <h4>Seni Mak Yong &amp; Warisan Wau Bulan</h4>
+          <p>Kelantan terkenal dengan teater tradisional Mak Yong yang menggabungkan tarian, lakonan, dan muzik ritual istana kuno. Terengganu pula masyhur dengan kehalusan pertukangan Wau Bulan.</p>
+        </div>
+      </div>
+      <div class="exhibit-card">
+        <div class="exhibit-ph">🎭</div>
+        <div class="exhibit-body">
+          <span class="tag">Melaka</span>
+          <h4>Asimilasi Unik Peranakan Baba Nyonya</h4>
+          <p>Gabungan harmoni adat Cina dan Melayu yang mengekalkan loghat Melayu fasih, keindahan busana Baju Kebaya Nyonya, serta variasi masakan lauk pauk yang kaya dengan rempah ratus.</p>
+        </div>
+      </div>
+      <div class="exhibit-card">
+        <div class="exhibit-ph">🦅</div>
+        <div class="exhibit-body">
+          <span class="tag">Sarawak (Etnik Iban)</span>
+          <h4>Tarian Ngajat &amp; Kehidupan Rumah Panjang</h4>
+          <p>Suku kaum Iban melambangkan kebersamaan melalui struktur penempatan Rumah Panjang. Tarian Ngajat ditarikan penuh megah sebagai lambang kepahlawanan atau kesyukuran menuai.</p>
+        </div>
+      </div>
+      <div class="exhibit-card">
+        <div class="exhibit-ph">🌋</div>
+        <div class="exhibit-body">
+          <span class="tag">Sabah (Etnik Kadazandusun)</span>
+          <h4>Tarian Sumazau &amp; Kehormatan Bambaazon</h4>
+          <p>Etnik terbesar Sabah yang mementingkan keharmonisan alam. Tarian Sumazau ditarikan dengan mendepakan tangan meniru gerakan burung helang yang meluncur terbang di angkasa.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="perayaan" class="content-section">
+    <div class="section-header">
+      <h2>🏮 Artikel 2: Erti Perayaan &amp; Teras Kepercayaan</h2>
+      <p>Memahami nilai spiritual, falsafah rohani, dan simbolik kegembiraan setiap perayaan</p>
+    </div>
+    <div class="exhibit-grid">
+      <div class="exhibit-card">
+        <div class="exhibit-ph">🌙</div>
+        <div class="exhibit-body">
+          <span class="tag">Melayu / Umat Islam</span>
+          <h4>Hari Raya Aidilfitri</h4>
+          <p><strong>Erti &amp; Kepercayaan:</strong> Perayaan menyambut kemenangan rohani setelah sebulan berpuasa menahan nafsu di bulan Ramadan. Lambang kesucian jiwa, amalan saling bermaafan, dan pengukuhan silaturahim sesama keluarga.</p>
+        </div>
+      </div>
+      <div class="exhibit-card">
+        <div class="exhibit-ph">🧧</div>
+        <div class="exhibit-body">
+          <span class="tag">Kaum Cina / Buddhis &amp; Taois</span>
+          <h4>Tahun Baru Cina</h4>
+          <p><strong>Erti &amp; Kepercayaan:</strong> Sambutan bagi menandakan permulaan tahun baru dalam kalendar lunar. Diwarnai pakaian merah untuk menolak keburukan nasib ('Nian') serta amalan Makan Besar demi keutuhan kebahagiaan keluarga.</p>
+        </div>
+      </div>
+      <div class="exhibit-card">
+        <div class="exhibit-ph">🪔</div>
+        <div class="exhibit-body">
+          <span class="tag">Kaum India / Penganut Hindu</span>
+          <h4>Deepavali (Pesta Cahaya)</h4>
+          <p><strong>Erti &amp; Kepercayaan:</strong> Meraikan kemenangan nilai kebaikan mutlak ke atas kejahatan (cahaya mengatasi kegelapan). Pelita minyak (kolam) dinyalakan bagi memohon keberkatan kediaman dan mengusir kejahilan.</p>
+        </div>
+      </div>
+      <div class="exhibit-card">
+        <div class="exhibit-ph">🌾</div>
+        <div class="exhibit-body">
+          <span class="tag">Suku Iban &amp; Kadazandusun</span>
+          <h4>Hari Gawai &amp; Pesta Kaamatan</h4>
+          <p><strong>Erti &amp; Kepercayaan:</strong> Perayaan menuai padi sebagai simbolik kesyukuran tertinggi kepada pencipta (pihak 'Kinoingan' dalam kaum Kadazan) atas rezeki hasil tanaman bumi yang menyara kehidupan seluruh komuniti.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="makanan" class="content-section">
+    <div class="section-header">
+      <h2>🍲 Artikel 3: Menu Makanan Tradisional Kebangsaan</h2>
+      <p>Koleksi juadah warisan purba yang menjadi kegemaran seluruh rakyat pelbagai bangsa</p>
+    </div>
+    <div class="exhibit-grid">
+      <div class="exhibit-card">
+        <div class="exhibit-ph">🥥</div>
+        <div class="exhibit-body">
+          <span class="tag">Melayu</span>
+          <h4>Nasi Lemak Bersambal</h4>
+          <p>Nasi beraroma wangi santan kelapa dan daun pandan. Kini menjadi identiti sarapan kebangsaan utama yang merentasi jurang kaum di kedai-kedai makan seluruh negara.</p>
+        </div>
+      </div>
+      <div class="exhibit-card">
+        <div class="exhibit-ph">🥟</div>
+        <div class="exhibit-body">
+          <span class="tag">Cina</span>
+          <h4>Dim Sum &amp; Tradisi Yee Sang</h4>
+          <p>Dim sum melambangkan juadah bersaiz kecil yang "menyentuh hati". Manakala Yee Sang dihidangkan untuk digaul beramai-ramai sebagai simbol doa kemakmuran.</p>
+        </div>
+      </div>
+      <div class="exhibit-card">
+        <div class="exhibit-ph">🥞</div>
+        <div class="exhibit-body">
+          <span class="tag">India</span>
+          <h4>Roti Canai Dan Tosai Ranggup</h4>
+          <p>Makanan berasaskan doh gandum dan penapaian beras. Budaya santai menikmati roti canai di kedai mamak menjadi bukti integrasi sosial harian rakyat Malaysia yang harmoni.</p>
+        </div>
+      </div>
+      <div class="exhibit-card">
+        <div class="exhibit-ph">🎋</div>
+        <div class="exhibit-body">
+          <span class="tag">Sabah &amp; Sarawak</span>
+          <h4>Ambuyat &amp; Manok Pansoh</h4>
+          <p>Ambuyat (hidangan sagu rumbia istimewa) bersama masakan Manok Pansoh (ayam yang dimasak di dalam batang buluh bersama daun ubi) yang mengekalkan rasa asli hutan borneo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="muzik" class="content-section">
+    <div class="section-header">
+      <h2>🥁 Artikel 4: Alat Muzik Tradisional &amp; Rentak Harmoni</h2>
+      <p>Interaktif: Tekan pada kad instrumen untuk melihat simulasi rentak ritma perpaduan</p>
+    </div>
+    <div class="instrument-grid">
+      <div class="instrument-card" onclick="tekanAlatMuzik('kompang', this)">
+        <div class="inst-icon">🥁</div>
+        <div class="inst-name">Kompang</div>
+        <div class="inst-sub">Kaum Melayu</div>
+      </div>
+      <div class="instrument-card" onclick="tekanAlatMuzik('gendang', this)">
+        <div class="inst-icon">🔊</div>
+        <div class="inst-name">Gendang Cina</div>
+        <div class="inst-sub">Kaum Cina</div>
+      </div>
+      <div class="instrument-card" onclick="tekanAlatMuzik('sitar', this)">
+        <div class="inst-icon">🪕</div>
+        <div class="inst-name">Sitar</div>
+        <div class="inst-sub">Kaum India</div>
+      </div>
+      <div class="instrument-card" onclick="tekanAlatMuzik('sape', this)">
+        <div class="inst-icon">🎸</div>
+        <div class="inst-name">Sape</div>
+        <div class="inst-sub">Borneo (Suku Orang Ulu)</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="nilai" class="content-section">
+    <div class="section-header">
+      <h2>🤝 Artikel 5: Nilai-Nilai Positif &amp; Tonggak Keamanan Negara</h2>
+      <p>Bagaimana pengamalan toleransi dan sikap saling menghormati memelihara keharmonian</p>
+    </div>
+    <div class="value-box">
+      <h4>1. Sikap Saling Menghormati (Mutual Respect)</h4>
+      <p style="margin-top:0.5rem; color:rgba(232,224,208,0.85); line-height:1.6;">Menghargai perbezaan dan pantang larang kaum lain tanpa rasa prejudis. Amalan keterbukaan minda ini membolehkan kepelbagaian diraikan sebagai satu kekuatan nasional, bukannya punca perbalahan.</p>
+    </div>
+    <div class="value-box">
+      <h4>2. Semangat Toleransi &amp; Amalan Kesederhanaan</h4>
+      <p style="margin-top:0.5rem; color:rgba(232,224,208,0.85); line-height:1.6;">Sentiasa bertolak ansur dan mengelakkan sebarang provokasi melampau yang menyentuh sensitiviti 3R (Agama, Bangsa, Raja). Mengutamakan jalan perbincangan atau dialog yang sihat.</p>
+    </div>
+    <div class="value-box">
+      <h4>3. Integrasi Sosial Melalui Kerjasama Komuniti</h4>
+      <p style="margin-top:0.5rem; color:rgba(232,224,208,0.85); line-height:1.6;">Budaya bergotong-royong atau amalan "Rumah Terbuka" semasa perayaan menjadi medium paling berkesan untuk meruntuhkan dinding stereotaip sesama jiran tetangga berbilang etnik.</p>
+    </div>
+    <div class="harmony-note">
+      <strong>📌 Mesej Utama Majalah:</strong> Keamanan negara yang kita kecapi hari ini bukan jaminan mutlak yang kekal selamanya tanpa usaha penjagaan. Ia menuntut komitmen utuh setiap individu untuk memilih toleransi berbanding permusuhan demi masa depan kedaulatan tanah air.
+    </div>
+  </div>
+
+  <div id="trivia" class="content-section">
+    <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <h2>🎮 Interaktif: Kuiz Cabaran Budaya Citra Malaysia</h2>
+        <p>Jawab soalan di bawah untuk menguji kefahaman integrasi kebudayaan anda!</p>
+      </div>
+      <button class="nav-btn" onclick="setSemulaKuiz()" style="background: var(--red); color: #fff; border-color: var(--red);">🔄 Mulakan Semula</button>
+    </div>
+    
+    <div class="quiz-block">
+      <div class="quiz-q">1. [Adat Resam] Suku kaum manakah di negeri Sabah yang melaksanakan upacara 'Magavau' bagi menghormati semangat padi (Bambaazon)?</div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="semakJawapan(this, false)">A) Suku Kaum Iban</button>
+        <button class="quiz-opt" onclick="semakJawapan(this, true)">B) Suku Kaum Kadazandusun</button>
+        <button class="quiz-opt" onclick="semakJawapan(this, false)">C) Masyarakat Peranakan Melaka</button>
+        <button class="quiz-opt" onclick="semakJawapan(this, false)">D) Kaum Bajau Laut</button>
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-q">2. [Kepercayaan] Mengapakah hidangan tradisi "Yee Sang" digaul setinggi yang mungkin semasa sambutan perayaan Tahun Baru Cina?</div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="semakJawapan(this, false)">A) Simbol tamatnya tempoh berpuasa</button>
+        <button class="quiz-opt" onclick="semakJawapan(this, false)">B) Kaedah ritual bagi menghalau bencana alam</button>
+        <button class="quiz-opt" onclick="semakJawapan(this, true)">C) Melambangkan peningkatan tuah, rezeki, dan kemakmuran yang tinggi</button>
+        <button class="quiz-opt" onclick="semakJawapan(this, false)">D) Menghormati semangat tuaian padi sawah</button>
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-q">3. [Nilai Murni] Sikap manakah yang paling berkesan bagi memelihara ikatan nilai keamanan dan toleransi dalam komuniti kejiranan berbilang kaum?</div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="semakJawapan(this, false)">A) Menyuarakan ketidakpuasan hati perkauman secara terbuka di media sosial</button>
+        <button class="quiz-opt" onclick="semakJawapan(this, false)">B) Memaksa rakan beretnik lain mematuhi adat resam peribadi kita</button>
+        <button class="quiz-opt" onclick="semakJawapan(this, false)">C) Mengasingkan diri daripada aktiviti kemasyarakatan perumahan</button>
+        <button class="quiz-opt" onclick="semakJawapan(this, true)">D) Menghormati sensitiviti keagamaan serta amalan budaya rakan sekeliling</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<footer>&copy; 2026 E-Majalah Citra Malaysia &mdash; Dibangunkan untuk Tugasan Pengajian Malaysia</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
