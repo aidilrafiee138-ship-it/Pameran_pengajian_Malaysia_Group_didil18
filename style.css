@@ -1,144 +1,142 @@
-/* ==========================================
-   GAYA CSS (STYLE) - TEMA EMAS & NAVY LUXURY
-   ========================================== */
-*, *::before, *::after {
+/* ==========================================================================
+   1. PEMANDU UTAMA & TEMA BARU (NAVY & GOLD)
+   ========================================================================== */
+:root {
+    --bg-dark: #0a1128;       /* Warna Navy Blue Gelap untuk latar belakang */
+    --card-bg: #001f54;       /* Warna Navy Blue yang terang sedikit untuk Kad */
+    --card-border: rgba(212, 175, 55, 0.2); /* Sempadan kad berwarna emas pudar */
+    --text-main: #f4f5f7;     /* Warna teks putih lembut supaya selesa dibaca */
+    --text-muted: #8da9c4;    /* Warna teks sekunder (biru pudar) */
+    --gold: #e1b12c;          /* Warna Emas Utama (lebih menyerlah atas warna navy) */
+    --font-header: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-:root {
-    --navy: #0a1628;
-    --deep: #0d2144;
-    --gold: #c8973a;
-    --gold-lt: #f0c060;
-    --red: #c0392b;
-    --green: #1a7a4a;
-    --white: #fff;
-    --off: #f8f4ee;
-    --glass: rgba(255, 255, 255, 0.07);
-    --gb: rgba(200, 151, 58, 0.25);
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background: var(--navy);
-    color: #e8e0d0;
-    font-family: 'Inter', sans-serif;
-    min-height: 100vh;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
     overflow-x: hidden;
+    padding-bottom: 3rem;
 }
 
+/* Latar Belakang Canvas Animasi */
 #bg-canvas {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
     pointer-events: none;
+    opacity: 0.3;
 }
 
+/* ==========================================================================
+   2. HEADER & NAVIGATION MENU
+   ========================================================================== */
 header {
-    position: relative;
-    z-index: 10;
     text-align: center;
-    padding: 4rem 1rem 3rem;
-    background: linear-gradient(180deg, rgba(10, 22, 40, .95) 0%, rgba(13, 33, 68, .6) 100%);
-    border-bottom: 1px solid var(--gb);
+    padding: 4rem 2rem 2rem 2rem;
+    position: relative;
 }
 
-.badge {
+header .badge {
     display: inline-block;
-    font-size: .7rem;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
+    background: rgba(225, 177, 44, 0.1);
     border: 1px solid var(--gold);
-    padding: .3rem 1.2rem;
-    border-radius: 30px;
-    margin-bottom: 1.2rem;
+    color: var(--gold);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 5vw, 3.2rem);
-    color: #fff;
+    font-family: var(--font-header);
+    font-size: 3rem;
     line-height: 1.2;
-    margin-bottom: .7rem;
-    text-shadow: 0 0 40px rgba(200, 151, 58, .3);
+    color: #fff;
+    margin-bottom: 1rem;
 }
 
 header h1 span {
-    color: var(--gold-lt);
+    color: var(--gold);
 }
 
 header p {
-    font-size: .95rem;
-    color: rgba(232, 224, 208, .7);
-    font-style: italic;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .container {
-    position: relative;
-    z-index: 10;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 2rem 1.2rem 4rem;
+    padding: 0 1.5rem;
 }
 
-/* Menu E-Majalah Tab Nav */
+/* Navigasi Menu */
 .nav-menu {
     display: flex;
     flex-wrap: wrap;
-    gap: .5rem;
+    gap: 0.75rem;
     justify-content: center;
-    margin-bottom: 2.5rem;
-    padding: .8rem;
-    background: var(--glass);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--gb);
-    border-radius: 16px;
+    margin-bottom: 3rem;
+    background: #001f54;
+    padding: 0.75rem;
+    border-radius: 12px;
+    border: 1px solid rgba(225, 177, 44, 0.15);
 }
 
 .nav-btn {
     background: transparent;
-    border: 1px solid rgba(200, 151, 58, .2);
-    color: rgba(232, 224, 208, .8);
-    padding: .6rem 1.1rem;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: .85rem;
-    font-family: 'Inter', sans-serif;
+    border: 1px solid transparent;
+    color: var(--text-muted);
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    transition: all .25s;
-    white-space: nowrap;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
 }
 
-.nav-btn:hover, .nav-btn.active {
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+.nav-btn.active {
     background: var(--gold);
-    color: var(--navy);
-    border-color: var(--gold);
+    color: #0a1128; /* Teks bertukar Navy Gelap apabila butang aktif */
     font-weight: 600;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(200, 151, 58, .35);
+    box-shadow: 0 4px 15px rgba(225, 177, 44, 0.4);
 }
 
+/* Content Sections Control */
 .content-section {
     display: none;
-    animation: fadeSlide .45s ease;
 }
 
 .content-section.active {
     display: block;
+    animation: fadeIn 0.5s ease forwards;
 }
 
-@keyframes fadeSlide {
-    from { opacity: 0; transform: translateY(16px); }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -149,236 +147,378 @@ header p {
 }
 
 .section-header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-header);
     font-size: 1.8rem;
-    color: var(--gold-lt);
-    margin-bottom: .3rem;
+    color: #fff;
+    margin-bottom: 0.25rem;
 }
 
 .section-header p {
-    font-size: .9rem;
-    color: rgba(232, 224, 208, .6);
+    color: var(--text-muted);
+    font-size: 1rem;
 }
 
-/* Grid Reka Bentuk Kad Artikels */
+/* ==========================================================================
+   3. ARTIKEL UTAMA (KAD MELINTANG / LANDSCAPE STYLE)
+   ========================================================================== */
 .exhibit-grid {
-    display: grid;
-    /* Menggunakan auto-fill membenarkan justify-content berfungsi untuk posisi tengah */
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.4rem;
-    /* Memastikan kad yang turun ke baris bawah akan duduk di tengah */
-    justify-content: center; 
-}
-
-.exhibit-card {
-    background: var(--glass);
-    border: 1px solid var(--gb);
-    border-radius: 14px;
-    overflow: hidden;
-    transition: transform .3s, box-shadow .3s;
-    backdrop-filter: blur(8px);
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Struktur Utama Kad Melintang */
+.exhibit-card {
+    display: flex;
+    flex-direction: row; /* Gambar kiri, teks kanan */
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    border: 1px solid var(--card-border);
 }
 
 .exhibit-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, .4), 0 0 0 1px var(--gold);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(225, 177, 44, 0.2);
+    background: #002868; /* Warna navy lebih terang sedikit semasa di-hover */
 }
 
+/* Tempat Letak Gambar Baru (Besar & Melintang) */
 .exhibit-ph {
+    flex: 0 0 40%; /* Mengambil 40% ruang kad */
+    min-height: 250px;
+    position: relative;
+    padding: 0;
+    background: #001333;
+}
+
+/* Memastikan Gambar Fit & Memenuhi Kotak */
+.exhibit-ph img {
     width: 100%;
-    height: 160px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Khas untuk bahagian Artikel 2 & 3 yang mengekalkan Emoji */
+.exhibit-ph-old {
+    flex: 0 0 120px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3.5rem;
-    background: linear-gradient(135deg, var(--deep), #1a3a60);
-    border-bottom: 1px solid var(--gb);
+    background: rgba(0, 0, 0, 0.15);
+    border-right: 1px solid var(--card-border);
 }
 
+/* Kandungan Teks Sebelah Gambar */
 .exhibit-body {
-    padding: 1.3rem;
-    flex-grow: 1;
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+/* Tag Etiket Kategori (Menggunakan Warna Emas Navy Tema Baru) */
 .exhibit-body .tag {
-    display: inline-block;
-    font-size: 0.65rem;
-    text-transform: uppercase;
+    align-self: flex-start;
+    background: rgba(225, 177, 44, 0.15);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
     font-weight: 600;
-    color: var(--gold-lt);
-    border: 1px solid rgba(240,192,96,0.3);
-    padding: 0.15rem 0.5rem;
-    border-radius: 4px;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .exhibit-body h4 {
-    font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 1.4rem;
     color: #fff;
-    margin-bottom: .5rem;
+    margin: 0 0 0.75rem 0;
+    font-family: var(--font-header);
 }
 
 .exhibit-body p {
-    font-size: .875rem;
-    color: rgba(232, 224, 208, .75);
+    font-size: 1rem;
     line-height: 1.6;
+    color: var(--text-main);
+    margin: 0;
 }
 
-/* Kotak Nilai & Nota */
-.harmony-note {
-    background: rgba(26, 122, 74, .15);
-    border-left: 4px solid var(--green);
-    padding: 1.2rem;
-    border-radius: 0 10px 10px 0;
-    margin-top: 2rem;
-    font-size: .9rem;
-    color: rgba(232, 224, 208, .9);
-    line-height: 1.6;
-}
-
-.value-box {
-    background: linear-gradient(135deg, rgba(20,40,80,0.6), rgba(10,22,40,0.8));
-    border: 1px solid var(--gb);
-    border-radius: 14px;
-    padding: 2rem;
-    margin-bottom: 1.5rem;
-}
-
-.value-box h4 {
-    color: var(--gold-lt);
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-/* Alat Muzik */
+/* ==========================================================================
+   4. ALAT MUZIK TRADISIONAL (GRID INTERAKTIF)
+   ========================================================================== */
 .instrument-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.2rem;
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
 .instrument-card {
-    background: var(--glass);
-    border: 1px solid var(--gb);
-    border-radius: 14px;
-    padding: 1.8rem 1rem 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2rem;
     text-align: center;
     cursor: pointer;
-    transition: all .25s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .instrument-card:hover {
-    background: rgba(200, 151, 58, .1);
+    background: #002868;
+    transform: scale(1.03);
     border-color: var(--gold);
 }
 
 .instrument-card.playing {
-    background: rgba(200, 151, 58, .2);
-    border-color: var(--gold-lt);
-    animation: pulseGlow 1.2s ease-in-out infinite;
+    background: rgba(225, 177, 44, 0.15);
+    border-color: var(--gold);
+    animation: pulse 1s infinite alternate;
 }
 
-@keyframes pulseGlow {
-    0%, 100% { box-shadow: 0 0 10px rgba(200, 151, 58, .2); }
-    50% { box-shadow: 0 0 25px rgba(200, 151, 58, .5); }
+@keyframes pulse {
+    from { box-shadow: 0 0 10px rgba(225, 177, 44, 0.2); }
+    to { box-shadow: 0 0 25px rgba(225, 177, 44, 0.5); }
 }
 
 .inst-icon {
-    font-size: 2.8rem;
-    margin-bottom: .6rem;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.instrument-card:hover .inst-icon {
+    transform: rotate(5deg) scale(1.1);
 }
 
 .inst-name {
-    font-weight: 600;
-    color: var(--gold-lt);
-    font-size: 1rem;
+    font-family: var(--font-header);
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 0.25rem;
 }
 
 .inst-sub {
-    font-size: .78rem;
-    color: rgba(232, 224, 208, .5);
-    margin-top: .2rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
-/* Blok Kuiz Trivia Interaktif */
-.quiz-block {
-    background: var(--glass);
-    border: 1px solid var(--gb);
-    border-radius: 14px;
+/* ==========================================================================
+   5. ARTIKEL NILAI KEAMANAN & FOOTER
+   ========================================================================== */
+.value-box {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-left: 4px solid var(--gold);
+    border-radius: 4px 12px 12px 4px;
     padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    backdrop-filter: blur(8px);
+    margin-bottom: 1.25rem;
 }
 
-.quiz-q {
-    font-weight: 600;
-    font-size: 1rem;
-    color: var(--off);
-    margin-bottom: 1.2rem;
-    line-height: 1.5;
-}
-
-.quiz-opts {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: .7rem;
-}
-
-.quiz-opt {
-    padding: .85rem 1rem;
-    background: rgba(255, 255, 255, .05);
-    border: 1px solid rgba(200, 151, 58, .2);
-    border-radius: 8px;
-    cursor: pointer;
-    text-align: left;
-    font-family: 'Inter', sans-serif;
-    font-size: .88rem;
-    color: rgba(232, 224, 208, .85);
-    transition: all .2s;
-}
-
-.quiz-opt:hover:not(:disabled) {
-    background: rgba(200, 151, 58, .15);
-    border-color: var(--gold);
+.value-box h4 {
+    font-size: 1.2rem;
     color: #fff;
+    font-family: var(--font-body);
 }
 
-.quiz-opt.correct {
-    background: rgba(26, 122, 74, .3);
-    border-color: var(--green);
-    color: #7fdbaa;
-    font-weight: 600;
-}
-
-.quiz-opt.wrong {
-    background: rgba(192, 57, 43, .2);
-    border-color: var(--red);
-    color: #f08080;
+.harmony-note {
+    background: rgba(225, 177, 44, 0.05);
+    border: 1px solid rgba(225, 177, 44, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    color: #fff;
 }
 
 .divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gb), transparent);
-    margin: 0;
-    position: relative;
-    z-index: 10;
+    background: linear-gradient(to right, transparent, var(--card-border), transparent);
+    margin: 4rem 0 2rem 0;
 }
 
 footer {
-    position: relative;
-    z-index: 10;
     text-align: center;
-    padding: 2.5rem;
-    font-size: .85rem;
-    color: rgba(232, 224, 208, .35);
-    border-top: 1px solid var(--gb);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    padding: 0 1rem;
 }
 
-@media(max-width: 768px) {
-    .exhibit-grid { grid-template-columns: 1fr; }
-    .quiz-opts { grid-template-columns: 1fr; }
-    .instrument-grid { grid-template-columns: 1fr 1fr; }
+/* ==========================================================================
+   6. INTERAKTIF KUIZ (QUIZ SYSTEM)
+   ========================================================================== */
+.quiz-block {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.quiz-q {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1.25rem;
+}
+
+.quiz-opts {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+.quiz-opt {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(225, 177, 44, 0.15);
+    color: var(--text-main);
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--font-body);
+}
+
+.quiz-opt:hover:not([disabled]) {
+    background: #002868;
+    border-color: var(--gold);
+    padding-left: 1.25rem;
+}
+
+/* Status Jawapan Betul/Salah */
+.quiz-opt.correct {
+    background: rgba(46, 139, 87, 0.3) !important;
+    border-color: #4ade80 !important;
+    color: #4ade80 !important;
+    font-weight: 600;
+}
+
+.quiz-opt.wrong {
+    background: rgba(225, 177, 44, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: #fca5a5 !important;
+    opacity: 0.6;
+}
+
+/* ==========================================================================
+   7. RESPONSIVE DESIGN (MOBILE OPTIMIZATION)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        padding: 2.5rem 1rem 1.5rem 1rem;
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        padding: 0.5rem;
+    }
+    
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Penyesuaian Kad Melintang Bertukar Menegak di Telefon */
+    .exhibit-card {
+        flex-direction: column; /* Tukar baris ke lajur menegak */
+    }
+    
+    .exhibit-ph {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 220px; /* Ketinggian gambar ideal di telefon */
+    }
+
+    .exhibit-ph-old {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 120px;
+        border-right: none;
+        border-bottom: 1px solid var(--card-border);
+    }
+    
+    .exhibit-body {
+        padding: 1.5rem;
+    }
+}
+
+/* ==========================================================================
+   📹 REKA BENTUK MODAL POPUP VIDEO YOUTUBE
+   ========================================================================== */
+.video-modal {
+  display: none; 
+  position: fixed; 
+  z-index: 2000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(10, 17, 40, 0.9); /* Latar gelap navy pekat */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  backdrop-filter: blur(5px); /* Kesan kabur premium di latar belakang */
+}
+
+.video-modal-content {
+  background-color: #0f1c3f;
+  border: 2px solid #d4af37; /* Sempadan Emas Diraja */
+  border-radius: 12px;
+  width: 100%;
+  max-width: 750px; 
+  position: relative;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+}
+
+.video-modal-close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  color: #ffffff;
+  font-size: 38px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.video-modal-close:hover {
+  color: #d4af37; /* Tukar emas apabila dihampiri tetikus */
+}
+
+/* Bingkai Kontena Video Nisbah Emas 16:9 */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; 
+  height: 0; 
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Animasi Gema Ketukan Kad Alat Musik */
+.pulse-animation {
+  transform: scale(0.95);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6) !important;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
